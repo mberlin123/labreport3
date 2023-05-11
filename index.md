@@ -23,6 +23,14 @@ $ find
 ./January/birthdaycake.png
 ./pictureideas.txt
 ```
-However, there are many more ways to use `find` beyond just listing the full contents of a directory.
+
+`find` can also be used to search a specific directory other than the current directory by giving it a desired directory as an argument. For example, the directory /Pictures/Feburary can be searched from the /Pictures directory with the command `find ./Feburary`. This command will result in the output:
+
+```
+$ find ./Feburary
+./Feburary
+./Feburary/newdog.png
+```
+However, there are many more ways to use `find` beyond just listing the full contents of a given directory.
 
 ## Using `find` With Command Line Arguments
