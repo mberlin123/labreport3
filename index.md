@@ -39,7 +39,7 @@ The main way to expand upon the functionality of `find` is by using command line
 As can be seen, the option name is preceded by `-` and is typed _before_ the option argument. Command line arguments can also often times be used together at the same time in different combination. 
 Although there are many such options for `find`, this lab report will cover only 4 of the most useful such command line options.
 
-* #### The `-name` Option
+* ### The `-name` Option
 
 The `-name` option is probably the most common used command line option for `find` (and one of the most used command line options of any command). It has two main uses. The first is for narowing down your `find` search if you know a portion of the name of the file(s) you are looking for. For example, if in the /technical/plos directory, you only care about files with "pmed" in the name, you can run the `find` command as follows:
 
@@ -110,7 +110,7 @@ $ find ./technical -name *.txt
 
 As these two examples of `-name` show, `-name` is a both useful and versatile command option that can be frequently used in bash.
 
-* #### The `-type` Option
+* ### The `-type` Option
 
 The `-type` option is used with similar syntax to the `-name` option. However, instead of filtering by names, it filters by type. Type is not the same thing as extension. Instead, type refers to a broader category of entities on the file system such as whether an item is a file, a directory, or something else. Although Linux contains many different options to use the `-type` option for as the file system is used for many various purposes, the most common use of `-type` is to filter by files or by directories.
 
@@ -166,7 +166,7 @@ $ find -type f
 (And so on for every file in the ./technical folder)
 ```
 
-* #### The `-mtime` Option
+* ### The `-mtime` Option
 
 The `-mtime` option is used to filter files by the date in which they were last modified. The `-mtime` option works similarly to the previous two examples, however there is one major difference. The user can choose to filter files either by a "less than" or "greater than" approach. That is, files can be filtered by "last modified since 5 days ago" or "last modified before 5 days ago". The syntax to do this is slightly different than the previous two options.
 
@@ -217,9 +217,60 @@ $find -mtime +1
 
 You're reading that right! There will be no output to the command, as there are no files (or directories) in the `./technical` folder that were modified before 1 day ago.
 
-* #### The `-size` Option
+* ### The `-size` Option
 
-The final option that will be covered in this lab report is the `-size` option. 
+The final option that will be covered in this lab report is the `-size` option. `-size` works very similarily to the `-mtime` option.
+
+To filter by files **larger than** 100 kilobytes, the following command can be used:
+
+`find -size +100k`
+
+Which gives the following output:
+
+```
+$ find -size +100k
+./911report/chapter-1.txt
+./911report/chapter-12.txt
+./911report/chapter-13.2.txt
+./911report/chapter-13.3.txt
+./911report/chapter-13.4.txt
+./911report/chapter-13.5.txt
+./911report/chapter-3.txt
+./911report/chapter-6.txt
+./911report/chapter-7.txt
+./911report/chapter-9.txt
+./biomed/1471-2105-3-2.txt
+./government/About_LSC/commission_report.txt
+./government/About_LSC/State_Planning_Report.txt
+./government/Env_Prot_Agen/bill.txt
+./government/Env_Prot_Agen/ctm4-10.txt
+./government/Env_Prot_Agen/multi102902.txt
+./government/Env_Prot_Agen/tech_adden.txt
+./government/Gen_Account_Office/ai9868.txt
+./government/Gen_Account_Office/d01376g.txt
+./government/Gen_Account_Office/d01591sp.txt
+./government/Gen_Account_Office/d0269g.txt
+./government/Gen_Account_Office/d02701.txt
+./government/Gen_Account_Office/gg96118.txt
+./government/Gen_Account_Office/GovernmentAuditingStandards_yb2002ed.txt
+./government/Gen_Account_Office/im814.txt
+./government/Gen_Account_Office/May1998_ai98068.txt
+./government/Gen_Account_Office/pe1019.txt
+./government/Gen_Account_Office/Sept27-2002_d02966.txt
+./government/Gen_Account_Office/Statements_Feb28-1997_volume.txt
+```
+
+Similarly, to filter by files **smaller than** 2 kilobytes **and are files**, the following command can be used:
+
+`find -size -2k -type f`
+
+Which gives the following output:
+
+```
+$ find -size -2k -type f
+./plos/pmed.0020191.txt
+./plos/pmed.0020226.txt
+```
 
 ## Sources
 This lab report was written by consulting the [Lab Report 3 guidelines](https://ucsd-cse15l-s23.github.io/week/week5/#week5-lab-report) and a [useful tutorial webpage on using the `find` command](https://linuxize.com/post/how-to-find-files-in-linux-using-the-command-line/).
