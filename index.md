@@ -110,7 +110,7 @@ $ find ./technical -name *.txt
 (And so on for every other .txt file in ./technical)
 ```
 
-As these two examples of `-name` show, `-name` is a both useful and versitile command option that can be frequently used in bash.
+As these two examples of `-name` show, `-name` is a both useful and versatile command option that can be frequently used in bash.
 
 * #### The `-type` Option
 
