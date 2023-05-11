@@ -25,4 +25,4 @@ $ find
 ```
 However, there are many more ways to use `find` beyond just listing the full contents of a directory.
 
-## Alternative Ways to use `find` with command line arguments
+## Using `find` With Command Line Arguments
