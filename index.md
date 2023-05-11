@@ -37,4 +37,9 @@ However, there are many more ways to use `find` beyond just listing the full con
 
 The main way to expand upon the functionality of `find` is by using command line options. Although there are many such options for `find`, this lab report will cover only 4 of the most useful such command line options.
 
-### The '-name' Option
+### The `-name` Option
+
+The `-name` option is probably the most common used command line option for `find` (and one of the most used command line options of any command). 
+
+## Sources
+This lab report was written by consulting the [Lab Report 3 guidelines](https://ucsd-cse15l-s23.github.io/week/week5/#week5-lab-report) and a [useful tutorial webpage on using the `find` command](https://linuxize.com/post/how-to-find-files-in-linux-using-the-command-line/).
