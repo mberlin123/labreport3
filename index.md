@@ -23,3 +23,6 @@ $ find
 ./January/birthdaycake.png
 ./pictureideas.txt
 ```
+However, there are many more ways to use `find` beyond just listing the full contents of a directory.
+
+##Alternative Ways to use `find` with command line arguments
