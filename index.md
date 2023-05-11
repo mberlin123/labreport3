@@ -37,4 +37,4 @@ However, there are many more ways to use `find` beyond just listing the full con
 
 The main way to expand upon the functionality of `find` is by using command line options. Although there are many such options for `find`, this lab report will cover only 4 of the most useful such command line options.
 
-# The '-name' Option
+### The '-name' Option
