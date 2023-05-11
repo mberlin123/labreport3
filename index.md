@@ -73,10 +73,44 @@ $ find ./technical/plos/ -name pmed*
 ./technical/plos/pmed.0010047.txt
 ./technical/plos/pmed.0010048.txt
 ./technical/plos/pmed.0010049.txt
-_(Continues for many more files)_
+(Continues for many more files)
 ```
 
 As can be seen, only files that begin with `pmed` are listed using this variation of the `find` command. It is important to note that the `*` at the end of `pmed` specifies that any characters after `pmed` are allowed. If the command `find ./technical/path -name pmed` is run instead, `find` will look for files only with the exact name `pmed` and therefore will not output any files at all as no files in the directory are named `pmed`.
+
+Another way to use the `-name` option is to specify by file extension. An example of how this could be used is to only output files in the `/technical` directory that are `.txt` files, ignoring any other file (or directory). To do this, the `*` from the `plos` example is once again used as follows:
+
+`find ./technical -name *.txt`
+
+As before, the `*` signals to bash that any file name is acceptable so long as it ends with the content after the `*` (in this case `.txt`). This command therefore results in the following output:
+
+```
+$ find ./technical -name *.txt
+./technical/911report/chapter-1.txt
+./technical/911report/chapter-10.txt
+./technical/911report/chapter-11.txt
+./technical/911report/chapter-12.txt
+./technical/911report/chapter-13.1.txt
+./technical/911report/chapter-13.2.txt
+./technical/911report/chapter-13.3.txt
+./technical/911report/chapter-13.4.txt
+./technical/911report/chapter-13.5.txt
+./technical/911report/chapter-2.txt
+./technical/911report/chapter-3.txt
+./technical/911report/chapter-5.txt
+./technical/911report/chapter-6.txt
+./technical/911report/chapter-7.txt
+./technical/911report/chapter-8.txt
+./technical/911report/chapter-9.txt
+./technical/911report/preface.txt
+./technical/biomed/1468-6708-3-1.txt
+./technical/biomed/1468-6708-3-10.txt
+./technical/biomed/1468-6708-3-3.txt
+./technical/biomed/1468-6708-3-4.txt
+(And so on for every other .txt file in ./technical)
+```
+
+As these two examples of `-name` show, `-name` is a both useful and versitile command option that can be frequently used in bash.
 
 * #### The `-type` Option
 
