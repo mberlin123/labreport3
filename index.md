@@ -41,8 +41,6 @@ Although there are many such options for `find`, this lab report will cover only
 
 * #### The `-name` Option
 
-`find ./Path -name desiredName`
-
 The `-name` option is probably the most common used command line option for `find` (and one of the most used command line options of any command). It has two main uses. The first is for narowing down your `find` search if you know a portion of the name of the file(s) you are looking for. For example, if in the /technical/plos directory, you only care about files with "pmed" in the name, you can run the `find` command as follows:
 
 `find ./technical/path -name pmed*`
@@ -114,15 +112,63 @@ As these two examples of `-name` show, `-name` is a both useful and versatile co
 
 * #### The `-type` Option
 
-`find ./Path -name desiredName -type desiredType`
+The `-type` option is used with similar syntax to the `-name` option. However, instead of filtering by names, it filters by type. Type is not the same thing as extension. Instead, type refers to a broader category of entities on the file system such as whether an item is a file, a directory, or something else. Although Linux contains many different options to use the `-type` option for as the file system is used for many various purposes, the most common use of `-type` is to filter by files or by directories.
+
+For example, while in the `/technical` directory, to list the subdirectories of the `./technical` folder, the following command can be used:
+
+`find -type d`
+
+This command results in the following output:
+
+```
+$ find -type d
+.
+./911report
+./biomed
+./government
+./government/About_LSC
+./government/Alcohol_Problems
+./government/Env_Prot_Agen
+./government/Gen_Account_Office
+./government/Media
+./government/Post_Rate_Comm
+./plos
+```
+
+`-type` can also be used in the opposite way, that is to filter by files. This can be done with the following command:
+
+`find -type f`
+
+This command results in the following output (when run in the `./technical` folder):
+
+```
+$ find -type f
+./911report/chapter-1.txt
+./911report/chapter-10.txt
+./911report/chapter-11.txt
+./911report/chapter-12.txt
+./911report/chapter-13.1.txt
+./911report/chapter-13.2.txt
+./911report/chapter-13.3.txt
+./911report/chapter-13.4.txt
+./911report/chapter-13.5.txt
+./911report/chapter-2.txt
+./911report/chapter-3.txt
+./911report/chapter-5.txt
+./911report/chapter-6.txt
+./911report/chapter-7.txt
+./911report/chapter-8.txt
+./911report/chapter-9.txt
+./911report/preface.txt
+./biomed/1468-6708-3-1.txt
+./biomed/1468-6708-3-10.txt
+./biomed/1468-6708-3-3.txt
+(And so on for every file in the ./technical folder)
+```
 
 * #### The `-mtime` Option
 
-`find ./Path -name desiredName -mtime desiredTime`
-
 * #### The `-size` Option
-
-`find ./Path -name desiredName -size desiredSize`
 
 ## Sources
 This lab report was written by consulting the [Lab Report 3 guidelines](https://ucsd-cse15l-s23.github.io/week/week5/#week5-lab-report) and a [useful tutorial webpage on using the `find` command](https://linuxize.com/post/how-to-find-files-in-linux-using-the-command-line/).
