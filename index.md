@@ -35,13 +35,48 @@ However, there are many more ways to use `find` beyond just listing the full con
 
 ## Using `find` With Command Line Options
 
-The main way to expand upon the functionality of `find` is by using command line options. Command line options are used by specifying the name of the desired option and then the arguments for that option after the main argument of a command. For example, many command line options are used in the following command structure: `find ./Feburary -exampleCommandOption exampleCommandArgument`. As can be seen, the option name is preceded by `-` and is typed _before_ the option argument. Command line arguments can also often times be used together at the same time in different combination. Although there are many such options for `find`, this lab report will cover only 4 of the most useful such command line options.
+The main way to expand upon the functionality of `find` is by using command line options. Command line options are used by specifying the name of the desired option and then the arguments for that option after the main argument of a command. For example, many command line options are used in the following command structure: `find ./Feburary -exampleCommandOption exampleCommandArgument`. 
+As can be seen, the option name is preceded by `-` and is typed _before_ the option argument. Command line arguments can also often times be used together at the same time in different combination. 
+Although there are many such options for `find`, this lab report will cover only 4 of the most useful such command line options.
 
 * #### The `-name` Option
 
 `find ./Path -name desiredName`
 
-The `-name` option is probably the most common used command line option for `find` (and one of the most used command line options of any command). As 
+The `-name` option is probably the most common used command line option for `find` (and one of the most used command line options of any command). It has two main uses. The first is for narowing down your `find` search if you know a portion of the name of the file(s) you are looking for. For example, if in the /technical/plos directory, you only care about files with "pmed" in the name, you can run the `find` command as follows:
+
+`find ./technical/path -name pmed*`
+
+The resulting output is:
+
+```
+$ find ./technical/plos/ -name pmed*
+./technical/plos/pmed.0010008.txt
+./technical/plos/pmed.0010010.txt
+./technical/plos/pmed.0010013.txt
+./technical/plos/pmed.0010021.txt
+./technical/plos/pmed.0010022.txt
+./technical/plos/pmed.0010023.txt
+./technical/plos/pmed.0010024.txt
+./technical/plos/pmed.0010025.txt
+./technical/plos/pmed.0010026.txt
+./technical/plos/pmed.0010028.txt
+./technical/plos/pmed.0010029.txt
+./technical/plos/pmed.0010030.txt
+./technical/plos/pmed.0010034.txt
+./technical/plos/pmed.0010036.txt
+./technical/plos/pmed.0010039.txt
+./technical/plos/pmed.0010041.txt
+./technical/plos/pmed.0010042.txt
+./technical/plos/pmed.0010045.txt
+./technical/plos/pmed.0010046.txt
+./technical/plos/pmed.0010047.txt
+./technical/plos/pmed.0010048.txt
+./technical/plos/pmed.0010049.txt
+_(Continues for many more files)_
+```
+
+As can be seen, only files that begin with `pmed` are listed using this variation of the `find` command. It is important to note that the `*` at the end of `pmed` specifies that any characters after `pmed` are allowed. If the command `find ./technical/path -name pmed` is run instead, `find` will look for files only with the exact name `pmed` and therefore will not output any files at all as no files in the directory are named `pmed`.
 
 * #### The `-type` Option
 
