@@ -43,15 +43,15 @@ The main way to expand upon the functionality of `find` is by using command line
 
 The `-name` option is probably the most common used command line option for `find` (and one of the most used command line options of any command). As 
 
-### * The `-type` Option
+* ### * The `-type` Option
 
 `find ./Path -name desiredName -type desiredType`
 
-### * The `-mtime` Option
+* ### * The `-mtime` Option
 
 `find ./Path -name desiredName -mtime desiredTime`
 
-### * The `-size` Option
+* ### * The `-size` Option
 
 `find ./Path -name desiredName -size desiredSize`
 
