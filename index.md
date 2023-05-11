@@ -168,7 +168,58 @@ $ find -type f
 
 * #### The `-mtime` Option
 
+The `-mtime` option is used to filter files by the date in which they were last modified. The `-mtime` option works similarly to the previous two examples, however there is one major difference. The user can choose to filter files either by a "less than" or "greater than" approach. That is, files can be filtered by "last modified since 5 days ago" or "last modified before 5 days ago". The syntax to do this is slightly different than the previous two options.
+
+To filter files by recently modified **in the last 1 day**, the following command is used:
+
+`find -mtime -1`
+
+This command will return the following output:
+
+```
+$ find -mtime -1
+.
+./911report
+./911report/chapter-1.txt
+./911report/chapter-10.txt
+./911report/chapter-11.txt
+./911report/chapter-12.txt
+./911report/chapter-13.1.txt
+./911report/chapter-13.2.txt
+./911report/chapter-13.3.txt
+./911report/chapter-13.4.txt
+./911report/chapter-13.5.txt
+./911report/chapter-2.txt
+./911report/chapter-3.txt
+./911report/chapter-5.txt
+./911report/chapter-6.txt
+./911report/chapter-7.txt
+./911report/chapter-8.txt
+./911report/chapter-9.txt
+./911report/preface.txt
+./biomed
+./biomed/1468-6708-3-1.txt
+./biomed/1468-6708-3-10.txt
+```
+
+As can be seen, this command basically returns the same result as the normal `find` command, because every file in the `./technical` directory was modified in the last day (due to being recently downloaded).
+
+However, if instead files are filtered by recently modified **before the last 1 day** as in the following command:
+
+`find -mtime +1`
+
+The output will instead be:
+
+```
+$find -mtime +1
+
+```
+
+You're reading that right! There will be no output to the command, as there are no files (or directories) in the `./technical` folder that were modified before 1 day ago.
+
 * #### The `-size` Option
+
+The final option that will be covered in this lab report is the `-size` option. 
 
 ## Sources
 This lab report was written by consulting the [Lab Report 3 guidelines](https://ucsd-cse15l-s23.github.io/week/week5/#week5-lab-report) and a [useful tutorial webpage on using the `find` command](https://linuxize.com/post/how-to-find-files-in-linux-using-the-command-line/).
