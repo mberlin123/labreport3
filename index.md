@@ -35,11 +35,11 @@ However, there are many more ways to use `find` beyond just listing the full con
 
 ## Using `find` With Command Line Options
 
-The main way to expand upon the functionality of `find` is by using command line options. Although there are many such options for `find`, this lab report will cover only 4 of the most useful such command line options.
+The main way to expand upon the functionality of `find` is by using command line options. Command line options are used by specifying the name of the desired option and then the arguments for that option after the main argument of a command. For example, many command line options are used in the following command structure: `find ./Feburary -exampleCommandOption exampleCommandArgument`. As can be seen, the option name is preceded by `-` and is typed _before_ the option argument. Although there are many such options for `find`, this lab report will cover only 4 of the most useful such command line options.
 
 ### The `-name` Option
 
-The `-name` option is probably the most common used command line option for `find` (and one of the most used command line options of any command). 
+The `-name` option is probably the most common used command line option for `find` (and one of the most used command line options of any command). As 
 
 ### The `-type` Option
 
